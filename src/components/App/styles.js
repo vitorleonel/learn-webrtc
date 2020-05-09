@@ -25,6 +25,10 @@ export const CallVideo = styled.video`
   background-color: #2d3436;
   transform: scaleX(-1);
   pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export const CallForm = styled.form`
