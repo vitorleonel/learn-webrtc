@@ -28,7 +28,26 @@ function App() {
     }
 
     const start = async () => {
-      const connection = new Peer(myId);
+      const connection = new Peer(myId, {
+        config: {
+          iceServers: [
+            { urls: ['stun:sp-turn2.xirsys.com'] },
+            {
+              username:
+                '3zDPRXjGJOkxBEkxZsQecQYYqbs_ffA57SudoXn5qCWH2kx_lCSunX615aghB1CqAAAAAF62MXR2aXRvcmxlb25lbA==',
+              credential: '8cd7e9a4-91ad-11ea-8565-0242ac120004',
+              urls: [
+                'turn:sp-turn2.xirsys.com:80?transport=udp',
+                'turn:sp-turn2.xirsys.com:3478?transport=udp',
+                'turn:sp-turn2.xirsys.com:80?transport=tcp',
+                'turn:sp-turn2.xirsys.com:3478?transport=tcp',
+                'turns:sp-turn2.xirsys.com:443?transport=tcp',
+                'turns:sp-turn2.xirsys.com:5349?transport=tcp',
+              ],
+            },
+          ],
+        },
+      });
 
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: true,
