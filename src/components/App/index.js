@@ -51,9 +51,7 @@ function App() {
 
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: true,
-        video: {
-          aspectRatio: 1.69,
-        },
+        video: true,
       });
 
       connection.on('call', (call) => {

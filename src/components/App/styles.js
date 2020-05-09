@@ -21,14 +21,13 @@ export const CallEmpty = styled.div`
 `;
 
 export const CallVideo = styled.video`
-  flex: 1;
   background-color: #2d3436;
   transform: scaleX(-1);
   pointer-events: none;
 
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export const CallForm = styled.form`
